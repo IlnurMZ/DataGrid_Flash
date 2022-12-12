@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGrid_Flash", "DataGrid_Flash\DataGrid_Flash.csproj", "{C34BA41E-D2C8-424A-866F-909F17763BFE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataView", "DataView\DataView.csproj", "{260C8063-A868-41F0-91AD-69DEC57ADFBD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashViewer2", "WpfApp1\FlashViewer2.csproj", "{F90741B9-9B64-482B-A47D-A9DB6230E337}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C34BA41E-D2C8-424A-866F-909F17763BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C34BA41E-D2C8-424A-866F-909F17763BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C34BA41E-D2C8-424A-866F-909F17763BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C34BA41E-D2C8-424A-866F-909F17763BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{260C8063-A868-41F0-91AD-69DEC57ADFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{260C8063-A868-41F0-91AD-69DEC57ADFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{260C8063-A868-41F0-91AD-69DEC57ADFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{260C8063-A868-41F0-91AD-69DEC57ADFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F90741B9-9B64-482B-A47D-A9DB6230E337}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F90741B9-9B64-482B-A47D-A9DB6230E337}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F90741B9-9B64-482B-A47D-A9DB6230E337}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F90741B9-9B64-482B-A47D-A9DB6230E337}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D074BB3D-4D44-49DC-8DFA-BD3685145274}
+	EndGlobalSection
+EndGlobal
