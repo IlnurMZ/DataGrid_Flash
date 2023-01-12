@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataGrid_Flash", "DataGrid_
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataView", "DataView\DataView.csproj", "{260C8063-A868-41F0-91AD-69DEC57ADFBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlashViewer2", "WpfApp1\FlashViewer2.csproj", "{F90741B9-9B64-482B-A47D-A9DB6230E337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlashViewer2", "WpfApp1\FlashViewer2.csproj", "{F90741B9-9B64-482B-A47D-A9DB6230E337}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestCode", "TestCode\TestCode.csproj", "{B27D3FCB-F468-4AE8-8B46-DD8AF29EE988}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{F90741B9-9B64-482B-A47D-A9DB6230E337}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F90741B9-9B64-482B-A47D-A9DB6230E337}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F90741B9-9B64-482B-A47D-A9DB6230E337}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B27D3FCB-F468-4AE8-8B46-DD8AF29EE988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B27D3FCB-F468-4AE8-8B46-DD8AF29EE988}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B27D3FCB-F468-4AE8-8B46-DD8AF29EE988}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B27D3FCB-F468-4AE8-8B46-DD8AF29EE988}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
