@@ -8,6 +8,7 @@
         Title="MainWindow" Height="450" Width="800">
   
     <Grid x:Name="grid1" Margin="5,5,5,5">
+        <DataGrid x:Name="datagrid1" Grid.Column="0" Margin="5,5,5,5" AutoGenerateColumns="True"/>
         <!--<Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
