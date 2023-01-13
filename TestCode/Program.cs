@@ -12,8 +12,10 @@ namespace TestCode
             //List<string> list = new List<string>() {"1","2"};
             //List<string> list2 = new List<string>() {"3","4"};
             //list.AddRange(list2);
-            //short shValue = -15;            
-            
+            //short shValue = -15;
+            byte a = 1;
+            byte b = 2;
+            Console.WriteLine(a | (b << 8));
             Console.ReadKey();
         }
 

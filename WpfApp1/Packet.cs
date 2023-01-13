@@ -10,9 +10,9 @@ namespace FlashViewer2
     {
         public byte idPacket { get; set; }
         public byte idDevice { get; set; }
-        public List<byte> lengthParams { get; set; } = new();
+        public List<byte> lengthParams { get; set; } = new(); // количество байт на параметр
         public List<string> typeParams { get; set; } = new();
-        public List<string> titleColumn { get; set; } = new();
+        public List<string> headerColumn { get; set; } = new();
         public List<string> typeCalculate { get; set; } = new();
         public List<double[]> dataCalculation { get; set; } = new();
         public List<byte> countSign { get; set; } = new();
@@ -20,6 +20,6 @@ namespace FlashViewer2
 
         public double badValue { get; set; } // пока не учавствует в работе
         public int lengthLine { get; set; } = 0;
-        public string endLine { get; set; } = "";
+        public int endLine { get; set; } = -999;
     }
 }
