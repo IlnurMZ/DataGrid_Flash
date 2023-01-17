@@ -20,6 +20,6 @@ namespace FlashViewer2
 
         public double badValue { get; set; } // пока не учавствует в работе
         public int lengthLine { get; set; } = 0;
-        public int endLine { get; set; } = -999;
+        public byte[] endLine { get; set; } = new byte[2]; // 2 байта на конец строки
     }
 }
