@@ -124,5 +124,124 @@ namespace FlashViewer2
 
 
         //}
+
+        byte c;
+        //BackgroundWorker worker = new BackgroundWorker();
+        //worker.WorkerReportsProgress = true;
+        //worker.DoWork += worker_DoWork;
+        //worker.ProgressChanged += worker_ProgressChanged;
+        //worker.RunWorkerAsync();
+        //var progress = new Progress<int>(value => progBar.Value = value);
+        //await Task.Run(() =>
+        //{
+        //    for (int i = 1; i <= 100; i++)
+        //    {
+        //        ((IProgress<int>)progress).Report(i);
+        //        Thread.Sleep(100);
+        //    }
+        //});
+        //void worker_DoWork(object sender, DoWorkEventArgs e)
+        //{
+        //    for (int i = 1; i <= 100; i++)
+        //    {
+        //        (sender as BackgroundWorker).ReportProgress(i);                
+        //    }
+        //}
+
+        //void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        //{
+        //    progBar.Value = e.ProgressPercentage;
+        //}
+
+        byte d;
+
+        //void EditTable(int id)
+        //{
+        //    ObservableCollection<DataGridColumn> columns = datagrid1.Columns;
+
+        //    foreach (DataGridColumn col in columns)
+        //    {
+        //        switch (col.Header.ToString())
+        //        {
+        //            case "numPacket":
+        //                col.Header = "ID строки";
+        //                col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "time":
+        //                col.Header = "Дата";
+        //                //col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "GK1":
+        //                col.Header = "ННК1/ННК1(вода)";
+        //                //col.Width = 180;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "GK2":
+        //                col.Header = "ННК2/ННК2(вода)";
+        //                //col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "GK3":
+        //                col.Header = "НГК/НГК(вода)";
+        //                //col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "GK4":
+        //                col.Header = "ННК1 [ед]";
+        //                //col.Width = 180;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "GK5":
+        //                col.Header = "ННК2 [ед]";
+        //                //col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "GK6":
+        //                col.Header = "НГК [ед]";
+        //                //col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "temperatura":
+        //                col.Header = "Температура НГК [°С]";
+        //                //col.Width = 180;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "periodSHIM":
+        //                col.Header = "Период ШИМ ННК";
+        //                //col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "currentWorkTime":
+        //                col.Header = "Текущая наработка";
+        //                //col.Width = 180;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "totalWorkTime":
+        //                col.Header = "Общая наработка";
+        //                //col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "timeNakop":
+        //                col.Header = "Время накопления [сек]";
+        //                //col.Width = 200;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            case "error":
+        //                col.Header = "Ошибка I2C";
+        //                //col.Width = 180;
+        //                col.Visibility = Visibility.Visible;
+        //                break;
+        //            default:
+        //                col.Visibility = Visibility.Collapsed;
+        //                break;
+        //        }
+        //    }
+        //}
+
+        byte e;
+
+
     }
 }

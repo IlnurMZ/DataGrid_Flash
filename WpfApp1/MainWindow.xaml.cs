@@ -48,29 +48,23 @@ namespace FlashViewer
         private static string GetbdTime(Byte[] array)
         {
             string dateTime = Convert.ToHexString(array);
-            int second = 0;
-            int minute = 0;
-            int hour = 0; 
-            int day = 0; 
-            int month = 0;
-            int year = 0;
+            string second = "";
+            string minute = "";
+            string hour = "";
+            string day = "";
+            string month = "";
+            string year = "";
             string date;
-          
-            try
-            {
-                second = int.Parse(dateTime[0].ToString() + dateTime[1].ToString());
-                minute = int.Parse(dateTime[2].ToString() + dateTime[3].ToString());
-                hour = int.Parse(dateTime[4].ToString() + dateTime[5].ToString());
-                day = int.Parse(dateTime[6].ToString() + dateTime[7].ToString());
-                month = int.Parse(dateTime[8].ToString() + dateTime[9].ToString());
-                year = 2000 + int.Parse(dateTime[10].ToString() + dateTime[11].ToString());
-                //date = new DateTime(year, month, day, hour, minute, second);
-                date = $"{hour}:{minute}:{second} {day}.{month}.{year}";
-            }
-            catch 
-            {
-                date = "";// new DateTime();
-            }
+
+            second = dateTime[0].ToString() + dateTime[1].ToString();
+            minute = dateTime[2].ToString() + dateTime[3].ToString();
+            hour = dateTime[4].ToString() + dateTime[5].ToString();
+            day = dateTime[6].ToString() + dateTime[7].ToString();
+            month = dateTime[8].ToString() + dateTime[9].ToString();
+            year = dateTime[10].ToString() + dateTime[11].ToString();
+            //date = new DateTime(year, month, day, hour, minute, second);
+            date = $"{hour}:{minute}:{second} {day}.{month}.{year}";
+
             return date;
         }
         // нажатие кнопки открыть файл
@@ -116,40 +110,13 @@ namespace FlashViewer
 
             Dispatcher.Invoke(() =>
             {
-                datagrid1.ItemsSource = Table.DefaultView;
-                var progress = new Progress<int>(value => progBar.Value = value);
-                ((IProgress<int>)progress).Report(0);
+                datagrid1.ItemsSource = Table.DefaultView;               
+                //var progress = new Progress<int>(value => progBar.Value = value);
+                //((IProgress<int>)progress).Report(0);
+                progBar.Value = 0;
             });
             EditTableColumn();
-
-            //datagrid1.ItemsSource = Table.DefaultView;
-            //EditTableColumn();
-
-            //await Task.Run(() =>
-            //{
-            //    if (isReadConfig && HandleDeviceParam())
-            //    {
-            //        Table = LoadDataTable();
-            //        datagrid1.ItemsSource = Table.DefaultView;
-            //        EditTableColumn();
-            //    }
-            //    else
-            //    {
-            //        return;
-            //    }
-            //});
-
-            // если конфигурационный файл успешно обработан => обработка данных с флешки
-            //if (isReadConfig && HandleDeviceParam())
-            //{
-            //    Table = LoadDataTable();
-            //    datagrid1.ItemsSource = Table.DefaultView;
-            //    EditTableColumn();
-            //}
-            //else
-            //{
-            //    return;
-            //}            
+            datagrid1.HorizontalAlignment = HorizontalAlignment.Left;            
         }
 
         // Изменение названия столбцов
@@ -161,93 +128,7 @@ namespace FlashViewer
             {
                 columns[i].Header = PacketsSettings[0].headerColumn[i].ToString();
             }
-        }
-
-  
-        //void EditTable(int id)
-        //{
-        //    ObservableCollection<DataGridColumn> columns = datagrid1.Columns;
-
-        //    foreach (DataGridColumn col in columns)
-        //    {
-        //        switch (col.Header.ToString())
-        //        {
-        //            case "numPacket":
-        //                col.Header = "ID строки";
-        //                col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "time":
-        //                col.Header = "Дата";
-        //                //col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "GK1":
-        //                col.Header = "ННК1/ННК1(вода)";
-        //                //col.Width = 180;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "GK2":
-        //                col.Header = "ННК2/ННК2(вода)";
-        //                //col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "GK3":
-        //                col.Header = "НГК/НГК(вода)";
-        //                //col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "GK4":
-        //                col.Header = "ННК1 [ед]";
-        //                //col.Width = 180;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "GK5":
-        //                col.Header = "ННК2 [ед]";
-        //                //col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "GK6":
-        //                col.Header = "НГК [ед]";
-        //                //col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "temperatura":
-        //                col.Header = "Температура НГК [°С]";
-        //                //col.Width = 180;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "periodSHIM":
-        //                col.Header = "Период ШИМ ННК";
-        //                //col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "currentWorkTime":
-        //                col.Header = "Текущая наработка";
-        //                //col.Width = 180;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "totalWorkTime":
-        //                col.Header = "Общая наработка";
-        //                //col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "timeNakop":
-        //                col.Header = "Время накопления [сек]";
-        //                //col.Width = 200;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            case "error":
-        //                col.Header = "Ошибка I2C";
-        //                //col.Width = 180;
-        //                col.Visibility = Visibility.Visible;
-        //                break;
-        //            default:
-        //                col.Visibility = Visibility.Collapsed;
-        //                break;
-        //        }
-        //    }
-        //}
+        }       
 
         string CalculateValueByType(string typeCalc, string value, double[] data) // по типу вычисления выдаем результат
         {
@@ -324,18 +205,19 @@ namespace FlashViewer
             int countBadByte = 0;
             DataRow row;
             byte loadStatus = 0;
-            byte tempVal = 0;
-            //bool isChange = true;
+            byte tempVal = 0;            
 
             for (int i = 0; i < FlashFile.Length; i++)
             {
-                bool isGoodStartLine = FlashFile[i] == idPacketArray && FlashFile[i + 1] == idDeviceArray; // условие захода в начало строки
+                // условие захода в начало строки
+                bool isGoodStartLine = FlashFile[i] == idPacketArray && FlashFile[i + 1] == idDeviceArray; 
 
                 if (i + countByteRow > FlashFile.Length) // проверка завершенности строки, чтобы исключить выход за пределы массива байт
                 {
                     break;
                 }
-                bool isGoodEndLine = FlashFile[i + countByteRow - 2] == endLinePacket[0] && FlashFile[i + countByteRow - 1] == endLinePacket[1]; // проверк
+                // проверка двух байт на конец строки
+                bool isGoodEndLine = FlashFile[i + countByteRow - 2] == endLinePacket[0] && FlashFile[i + countByteRow - 1] == endLinePacket[1]; 
 
                 if (isGoodStartLine && isGoodEndLine) // проверка совпадения на начало строки
                 {
@@ -348,7 +230,7 @@ namespace FlashViewer
                         string valueA = GetValueByType(myPacket.typeParams[j], values); // вычисляем значение по типу данных
                         string valueB = CalculateValueByType(myPacket.typeCalculate[j], valueA, myPacket.dataCalculation[j]); // вычисляем пересчет данного по типу
                         row[j] = valueB;
-                        i += countByte; // смещаем курсор по общему массиву байт                                     
+                        i += countByte; // смещаем курсор по общему массиву байт                        
                     }
                     i--;
                     dt.Rows.Add(row);                    
@@ -358,22 +240,19 @@ namespace FlashViewer
                     countBadByte++;
                 }
                 
-                tempVal = (byte)((double)i / FlashFile.Length * 100);
-                if (tempVal != loadStatus)
+                tempVal = (byte)(i*1.0 / FlashFile.Length * 100);
+                if (tempVal >= loadStatus)
                 {
-                    loadStatus = tempVal;
+                    loadStatus =(byte)(tempVal + 10);
                     Dispatcher.Invoke(() =>
                     {
-                        var progress = new Progress<int>(value => progBar.Value = value);
-                        ((IProgress<int>)progress).Report(loadStatus);
+                        //var progress = new Progress<int>(value => progBar.Value = value);
+                        //((IProgress<int>)progress).Report(loadStatus);
+                        progBar.Value = loadStatus;
                     });
-                }                
-
-            }
-            //await Task.Delay(1);
-            //MessageBox.Show("Я все!");            
+                }
+            }                   
             return dt;
-
         }        
 
         private bool ReadBytesFromFile(string path)
@@ -598,35 +477,9 @@ namespace FlashViewer
 
         private async void MenuItemCloseProgram_Click(object sender, RoutedEventArgs e)
         {
-            //BackgroundWorker worker = new BackgroundWorker();
-            //worker.WorkerReportsProgress = true;
-            //worker.DoWork += worker_DoWork;
-            //worker.ProgressChanged += worker_ProgressChanged;
-            //worker.RunWorkerAsync();
-            var progress = new Progress<int>(value => progBar.Value = value);
-            await Task.Run(() =>
-            {
-                for (int i = 1; i <= 100; i++)
-                {
-                    ((IProgress<int>)progress).Report(i);
-                    Thread.Sleep(100);
-                }
-            });
-
+            Application.Current.Shutdown();
         }
 
-        void worker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            for (int i = 1; i <= 100; i++)
-            {
-                (sender as BackgroundWorker).ReportProgress(i);                
-            }
-        }
-
-        void worker_ProgressChanged(object sender, ProgressChangedEventArgs e)
-        {
-            progBar.Value = e.ProgressPercentage;
-        }
     }
     
 }
