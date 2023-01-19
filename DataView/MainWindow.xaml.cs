@@ -25,7 +25,7 @@ namespace DataView
         public MainWindow()
         {
             InitializeComponent();
-
+            
             //DataGrid data2 = new DataGrid();
 
             //DataGridTextColumn c1 = new DataGridTextColumn();
@@ -47,48 +47,63 @@ namespace DataView
 
             //grid1.ite
 
-            catalog.Add(new Phone { Name = "S22", Compania = new Company { Title = "Samsung" }, Price = 1000 });
-            catalog.Add(new Phone { Name = "S23", Compania = new Company { Title = "Samsung" }, Price = 2000 });
-            catalog.Add(new Phone { Name = "S24", Compania = new Company { Title = "Samsung" }, Price = 3000 });
-            catalog.Add(new Phone { Name = "S25", Compania = new Company { Title = "Samsung" }, Price = 4000 });
-            catalog.Add(new Phone { Name = "S26", Compania = new Company { Title = "Samsung" }, Price = 5000 });            
+            //catalog.Add(new Phone { Name = "S22", Compania = new Company { Title = "Samsung" }, Price = 1000 });
+            //catalog.Add(new Phone { Name = "S23", Compania = new Company { Title = "Samsung" }, Price = 2000 });
+            //catalog.Add(new Phone { Name = "S24", Compania = new Company { Title = "Samsung" }, Price = 3000 });
+            //catalog.Add(new Phone { Name = "S25", Compania = new Company { Title = "Samsung" }, Price = 4000 });
+            //catalog.Add(new Phone { Name = "S26", Compania = new Company { Title = "Samsung" }, Price = 5000 });            
 
         }
 
+
+
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            phonesGrid.ItemsSource = catalog;
+            //phonesGrid.ItemsSource = catalog;
 
-            ObservableCollection<DataGridColumn> columns = phonesGrid.Columns;
-            foreach (DataGridColumn col in columns)
-            {
-                switch (col.Header.ToString())
-                {
-                    case "Name":
-                        col.Header = "Название";
-                        //col.Ca
-                        col.Width = 200;
-                        col.Visibility = Visibility.Visible;
-                        break;
-                    case "Compania":
-                        col.Header = "Компания";
-                        col.Width = 200;
-                        col.Visibility = Visibility.Visible;
-                        break;
-                    case "Price":
-                        col.Header = "Цена";
-                        col.Width = 180;
-                        col.Visibility = Visibility.Visible;
-                        break;                   
-                    default:
-                        col.Visibility = Visibility.Collapsed;
-                        break;
-                }
-            }
-
-
+            //ObservableCollection<DataGridColumn> columns = phonesGrid.Columns;
+            //foreach (DataGridColumn col in columns)
+            //{
+            //    switch (col.Header.ToString())
+            //    {
+            //        case "Name":
+            //            col.Header = "Название";
+            //            //col.Ca
+            //            col.Width = 200;
+            //            col.Visibility = Visibility.Visible;
+            //            break;
+            //        case "Compania":
+            //            col.Header = "Компания";
+            //            col.Width = 200;
+            //            col.Visibility = Visibility.Visible;
+            //            break;
+            //        case "Price":
+            //            col.Header = "Цена";
+            //            col.Width = 180;
+            //            col.Visibility = Visibility.Visible;
+            //            break;                   
+            //        default:
+            //            col.Visibility = Visibility.Collapsed;
+            //            break;
+            //    }
+            //}
 
 
+
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            lbl1.Content = "BBBB";
+        }
+
+        private async void Button2_Click(object sender, RoutedEventArgs e)
+        {
+            Label lbl2 = new Label();
+            lbl2.Content = "12345";
+            lbl2.HorizontalAlignment = HorizontalAlignment.Left;
+            grid1.Children.Add(lbl2);
         }
     }
 }

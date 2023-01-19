@@ -8,14 +8,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600" Loaded="Window_Loaded">
     <Grid x:Name="grid1"  Background="AliceBlue" Margin="5,5,5,5">
-        
-        <DataGrid x:Name="phonesGrid" Margin="10,10,10,10">
-            <!--<DataGrid.Columns>-->
+        <Label x:Name="lbl1" Content="AAA" HorizontalAlignment="Center"/>
+        <Button Content="Нажать" FontSize="13" Width="80" Height="50" Click="Button_Click"/>
+        <Button Content="Нажать" HorizontalAlignment="Right" FontSize="13" Width="80" Height="50" Click="Button2_Click"/>
+        <!--<DataGrid x:Name="phonesGrid" Margin="10,10,10,10">            
+            --><!--<DataGrid.Columns>-->
                 <!--<DataGridTextColumn x:Name="ColName" Binding="{Binding Path=Name}" Width="100" Header="Название"/>
                 <DataGridTextColumn x:Name="ColCompany" Binding="{Binding Path=Compania.Title}" Width="100" Header="Компания"/>
                 <DataGridTextColumn x:Name="ColPrice" Binding="{Binding Path=Price}" Width="100" Header="Цена"/>-->                
-            <!--</DataGrid.Columns>-->            
-        </DataGrid>
+            <!--</DataGrid.Columns>--><!--            
+        </DataGrid>-->
     </Grid>
 
 
