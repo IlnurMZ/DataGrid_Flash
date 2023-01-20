@@ -5,12 +5,37 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataView"
         xmlns:col="clr-namespace:System.Collections;assembly=mscorlib"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="600" Loaded="Window_Loaded">
-    <Grid x:Name="grid1"  Background="AliceBlue" Margin="5,5,5,5">
+    <Window.Resources>
+        <col:ArrayList x:Key="days">
+            <sys:String>Понедельник</sys:String>
+            <sys:String>Вторник</sys:String>
+            <sys:String>Среда</sys:String>
+        </col:ArrayList>
+    </Window.Resources>
+    <Grid x:Name="grid1"  Background="#FFA7C9E8" Margin="5,5,5,5" >
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
         <Label x:Name="lbl1" Content="AAA" HorizontalAlignment="Center"/>
-        <Button Content="Нажать" FontSize="13" Width="80" Height="50" Click="Button_Click"/>
-        <Button Content="Нажать" HorizontalAlignment="Right" FontSize="13" Width="80" Height="50" Click="Button2_Click"/>
+        <Button Name="btn" Grid.Column="1" FontSize="13" Width="180" Height="50" Click="Button_Click" Cursor="Wait">
+            <Button.Content>
+                <local:Student Name ="Riki" Id="1" Money="1000"/>
+            </Button.Content>           
+        </Button>
+        <ScrollViewer x:Name="scrv1" />
+        <TextBox x:Name="txtbox1" Grid.Column="2" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" />
+        <TextBox x:Name="txtbox2" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Text="{Binding ElementName=txtbox1,Path=Text,Mode=TwoWay}"/>
+        <!--<Button Content="Нажать" HorizontalAlignment="Right" FontSize="13" Width="80" Height="50" Click="Button2_Click"/>-->
         <!--<DataGrid x:Name="phonesGrid" Margin="10,10,10,10">            
             --><!--<DataGrid.Columns>-->
                 <!--<DataGridTextColumn x:Name="ColName" Binding="{Binding Path=Name}" Width="100" Header="Название"/>

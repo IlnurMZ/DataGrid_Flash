@@ -20,12 +20,11 @@ namespace DataView
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        List<Phone> catalog = new List<Phone>();
+    {        
         public MainWindow()
         {
-            InitializeComponent();
-            
+            InitializeComponent();            
+            //btn.Visibility = Visibility.Hidden;
             //DataGrid data2 = new DataGrid();
 
             //DataGridTextColumn c1 = new DataGridTextColumn();
@@ -93,9 +92,18 @@ namespace DataView
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            Task t1 = new Task(() => Waiter());
+            t1.Start();
+            await Task.Delay(1000);
             lbl1.Content = "BBBB";
+           
+        }
+
+        public async void Waiter()
+        {
+            await Task.Delay(4000);
         }
 
         private async void Button2_Click(object sender, RoutedEventArgs e)
@@ -103,7 +111,21 @@ namespace DataView
             Label lbl2 = new Label();
             lbl2.Content = "12345";
             lbl2.HorizontalAlignment = HorizontalAlignment.Left;
+            Button buttonTest = new Button();
+            buttonTest.Background = Brushes.Red;
             grid1.Children.Add(lbl2);
+        }
+    }
+
+    public class Student
+    {
+        public string Name { get; set; }
+        public int Id { get; set; }
+        public int Money { get; set; }
+
+        public override string ToString()
+        {
+            return $"{Id}: {Name} - {Money}";
         }
     }
 }

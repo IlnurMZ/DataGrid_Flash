@@ -108,15 +108,23 @@ namespace FlashViewer
                 }
             });
 
-            Dispatcher.Invoke(() =>
-            {
-                datagrid1.ItemsSource = Table.DefaultView;               
-                //var progress = new Progress<int>(value => progBar.Value = value);
-                //((IProgress<int>)progress).Report(0);
-                progBar.Value = 0;
-            });
+            //Dispatcher.Invoke(() =>
+            //{
+            //    datagrid1.ItemsSource = Table.DefaultView;               
+            //    //var progress = new Progress<int>(value => progBar.Value = value);
+            //    //((IProgress<int>)progress).Report(0);
+            //    //progBar.Value = 0;
+            //});
+            datagrid1.ItemsSource = Table.DefaultView;
             EditTableColumn();
-            datagrid1.HorizontalAlignment = HorizontalAlignment.Left;            
+            progBar.Value = 0;
+
+            //Task t2 = new Task(() =>
+            //{
+            //    progBar.Value = 0;
+            //});
+            //t2.Start();
+
         }
 
         // Изменение названия столбцов
@@ -128,6 +136,7 @@ namespace FlashViewer
             {
                 columns[i].Header = PacketsSettings[0].headerColumn[i].ToString();
             }
+            datagrid1.HorizontalAlignment = HorizontalAlignment.Left;
         }       
 
         string CalculateValueByType(string typeCalc, string value, double[] data) // по типу вычисления выдаем результат

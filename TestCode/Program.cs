@@ -1,4 +1,5 @@
-﻿using Microsoft.Office.Interop.Excel;
+﻿using System.Collections;
+using Microsoft.Office.Interop.Excel;
 using static System.Net.Mime.MediaTypeNames;
 using Application = Microsoft.Office.Interop.Excel.Application;
 using Range = Microsoft.Office.Interop.Excel.Range;
@@ -8,8 +9,14 @@ namespace TestCode
     internal class Program
     {
         static void Main(string[] args)
-        {            
-            
+        {
+            ArrayList ar = new ArrayList();            
+            List<string> lis = new();
+            lis.Add("abc");
+            foreach (var item in lis)
+            {
+                Console.WriteLine(item);
+            }
         }
 
     
